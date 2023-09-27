@@ -20,11 +20,15 @@
     const checkAnswer = (ans:string) => {latest_answer = ans;}
 </script>
 <style>
+    @font-face {
+        font-family: 'MayanNumerals';
+        src: url('NotoSansMayanNumerals-Regular.tff');
+    }
     img {
         width: 10%;
     }
     h2 {
-        font-family: 'Noto Sans Mayan Numerals', sans-serif;
+        font-family: 'MayanNumerals', sans-serif;
     }
 </style>
 {#each images as img}
