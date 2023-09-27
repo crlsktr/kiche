@@ -21,7 +21,9 @@
     }
 </style>
 {#each images as img}
+    {#if img!=="" && img.length>0}
     <img alt="{img}" src={img+".png"}/>
+    {/if}
 {/each}
 <h2>{numerals[selected_number]}</h2>
 <h2>{selected_number}</h2>
