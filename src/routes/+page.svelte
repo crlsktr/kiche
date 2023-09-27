@@ -22,7 +22,7 @@
 <style>
     @font-face {
         font-family: 'MayanNumerals';
-        src: url('MayanNumerals.ttf');
+        src: url('/MayanNumerals.ttf');
     }
     img {
         width: 10%;
