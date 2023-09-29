@@ -54,7 +54,7 @@
         font-family: 'material-ui';
     }
 </style>
-{#each Array(selected_number_index + 1) as img,i}
+{#each Array(selected_number_index) as img,i}
     {#if animalOptions[selected_animal_index]!==""}
     <img alt="{animalOptions[selected_animal_index]}" {src}/>
     {/if}
