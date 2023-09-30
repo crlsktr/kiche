@@ -8,8 +8,9 @@
         font-family: 'MayanNumerals';
         src: url('/MayanNumerals.ttf');
     }
-    * {
+    div {
         font-family: 'MayanNumerals', sans-serif;
+        font-size: 1200%;
     }
 </style>
 <div>{numerals[number]}</div>

@@ -24,7 +24,6 @@
         shuffleArray(possible_options);
         latest_answer = "";
     }
-    resetGame();
     const checkAnswer = (ans:string) => {
         if (latest_answer!==""){
             latest_answer = ans;
@@ -34,6 +33,8 @@
         ans === numberNames[selected_number_index] ? correct++:correct;
         latest_answer = ans;
     }
+
+    resetGame();
 </script>
 <style>
     @font-face {
@@ -41,7 +42,9 @@
         src: url('/MaterialSymbolsOutlined.ttf')
     }
     img {
-        width: 10%;
+        height: auto;
+        width: auto;
+        max-width: 150px;
     }
     .material-symbols-outlined {
         font-variation-settings:
@@ -53,15 +56,35 @@
     span {
         font-family: 'material-ui';
     }
+    button {
+        font-size: x-large;
+    }
+    div.options{
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content:space-evenly;
+    }
+    div {
+        font-size: 320%;
+    }
+    .score {
+        border: 1px solid black;
+        border-radius: 14px;
+        margin-top: 10px;
+    }
 </style>
+<div class="animales">
 {#each Array(selected_number_index) as img,i}
     {#if animalOptions[selected_animal_index]!==""}
     <img alt="{animalOptions[selected_animal_index]}" {src}/>
     {/if}
 {/each}
+</div>
 <MayanNumeral number="{selected_number_index}" />
-<h2>{selected_number_index}</h2>
-<div>
+<div>{selected_number_index}</div>
+
+<div class="options">
     {#each possible_options as possible}
     <button on:click={() => checkAnswer(possible)}>{possible}</button>
     {/each}
@@ -72,4 +95,4 @@
         <span class="material-symbols-outlined">restart_alt</span>
     </button>
 {/if}
-<div>{correct}/{tries}</div>
+<div class="score">{correct}/{tries}</div>
