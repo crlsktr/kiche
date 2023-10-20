@@ -5,6 +5,7 @@
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
+	import { base } from '$app/paths';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
@@ -14,7 +15,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<a href="/" target="/" rel="noreferrer"><strong class="text-xl uppercase">K'iche'</strong></a>
+				<a href="{base}/" target="{base}/" rel="noreferrer"><strong class="text-xl uppercase">K'iche'</strong></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
