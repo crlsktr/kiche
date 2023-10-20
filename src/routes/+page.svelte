@@ -25,7 +25,7 @@
 		<!-- / -->
 		<nav class="list-nav">
 			<ul >
-				<li><a href="{base}/ajilab'al"><span class="flex-auto">Ajilab'al</span></a></li>
+				<li><a href="{base}/ajilabal"><span class="flex-auto">Ajilab'al</span></a></li>
 			</ul>
 		</nav>
 		
