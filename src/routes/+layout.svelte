@@ -15,7 +15,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<a href="{base}/" target="{base}/" rel="noreferrer"><strong class="text-xl uppercase">K'iche'</strong></a>
+				<a href="{base}/" rel="noreferrer"><strong class="text-xl uppercase">K'iche'</strong></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
