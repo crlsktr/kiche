@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {shuffleArray, randomSelection,get_other_random} from "$lib/index";
+    import {shuffleArray,get_other_random} from "$lib/index";
     import {numberNames, numerals} from "$lib/numerals";
     import {animalOptions} from "$lib/animals";
     import MayanNumeral from "$lib/components/MayanNumeral.svelte";
@@ -9,7 +9,8 @@
     let selected_number_index :number = 0;
     let src:string = "";
     let possible_options:string[] = [];
-    let latest_answer:string = "";
+    let tried_answers:Set<string> = new Set();
+    let solved:boolean = false;
     let tries:number = 0;
     let correct: number = 0;
 
@@ -23,22 +24,25 @@
         selected_animal_index= Math.floor(Math.random() * animalOptions.length);
         selected_number_index= Math.floor(Math.random() * numerals.length);
         src = animalOptions[selected_animal_index] + ".png";
+        solved = false;
         possible_options = [
             numberNames[selected_number_index],
             get_other_random(numberNames[selected_number_index],numberNames),
             get_other_random(numberNames[selected_number_index],numberNames)
         ];
         shuffleArray(possible_options);
-        latest_answer = "";
+        tried_answers.clear();
     }
     const checkAnswer = (ans:string) => {
-        if (latest_answer!==""){
-            latest_answer = ans;
+        
+        if (tried_answers.has(ans)||solved){
             return;
         }
         tries++;
-        ans === numberNames[selected_number_index] ? correct++:correct;
-        latest_answer = ans;
+        solved = ans === numberNames[selected_number_index];
+        if (solved) correct++;
+        tried_answers.add(ans);
+        tried_answers = tried_answers; //this is to explicitly trigger reactivity https://discord.com/channels/457912077277855764/1163922042958131341
     }
 
     resetGame();
@@ -66,9 +70,9 @@
             <button class="btn btn-m variant-filled-primary" on:click={() => checkAnswer(possible)}>{possible}</button>
             {/each}
         </div>
-        {#if latest_answer !=="" }
+        {#if tried_answers.size > 0 }
         <div class="text-center">
-            <h2>{latest_answer === numberNames[selected_number_index] ? "✔️" : "❌"}</h2>
+            <h2>{solved ? "✔️" : "❌"}</h2>
             <button class="btn btn-m variant-filled-primary" on:click={() => resetGame()}>
                 <span class="material-symbols-outlined">restart_alt</span>
             </button>
