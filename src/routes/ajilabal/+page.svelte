@@ -11,6 +11,7 @@
     let possible_options:string[] = [];
     let tried_answers:Set<string> = new Set();
     let solved:boolean = false;
+    let used_turn:boolean = false;
     let tries:number = 0;
     let correct: number = 0;
 
@@ -25,6 +26,7 @@
         selected_number_index= Math.floor(Math.random() * numerals.length);
         src = animalOptions[selected_animal_index] + ".png";
         solved = false;
+        used_turn = false;
         possible_options = [
             numberNames[selected_number_index],
             get_other_random(numberNames[selected_number_index],numberNames),
@@ -34,15 +36,15 @@
         tried_answers.clear();
     }
     const checkAnswer = (ans:string) => {
-        
-        if (tried_answers.has(ans)||solved){
-            return;
-        }
-        tries++;
-        solved = ans === numberNames[selected_number_index];
-        if (solved) correct++;
         tried_answers.add(ans);
         tried_answers = tried_answers; //this is to explicitly trigger reactivity https://discord.com/channels/457912077277855764/1163922042958131341
+        if (solved) return;
+        solved = ans === numberNames[selected_number_index];
+        if (solved && !used_turn) correct++;
+        if (!used_turn) {
+            tries++;
+            used_turn = true;
+        }
     }
 
     resetGame();
@@ -67,7 +69,12 @@
         
         <div class="flex flex-row justify-center m-10">
             {#each possible_options as possible}
-            <button class="btn btn-m variant-filled-primary" on:click={() => checkAnswer(possible)}>{possible}</button>
+            <button class="btn btn-m variant-filled-primary" 
+                on:click={() => checkAnswer(possible)}
+                disabled = {tried_answers.has(possible)}
+                >
+                {possible}
+            </button>
             {/each}
         </div>
         {#if tried_answers.size > 0 }
