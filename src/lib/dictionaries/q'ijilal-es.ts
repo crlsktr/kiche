@@ -1,0 +1,36 @@
+/**
+ * Words related to time
+ */
+export const qijilal: Translation[] = [
+	{ word: "Q'ijilal", translation: 'tiempo' },
+	{ word: "Retab'alil q'ij", translation: 'reloj' },
+	{ word: 'Or', translation: 'hora' },
+	{ word: "Kab'ijir", translation: 'anteayer' },
+	{ word: 'Iwir', translation: 'ayer' },
+	{ word: 'Kamik', translation: 'hoy' },
+	{ word: "Chwe'q", translation: 'día: mañana' },
+	{ word: "Kab'ij", translation: 'pasado mañana' },
+	{ word: "Ajilab'al q'ij", translation: 'calendario' },
+	{ word: "Q'ij", translation: 'día' },
+	{ word: "Ik'", translation: 'mes' },
+	{ word: "Junab'", translation: 'año' },
+	{ word: "wuqub'ixir", translation: 'semana pasada' },
+	{ word: "wuqub'ix", translation: 'semana próxima' },
+	{ word: "Rajilab'al q'ij", translation: 'fecha' },
+	{ word: "Nimaq'ab'", translation: 'madrugada' },
+	{ word: "Aq'ab'il", translation: 'por la mañana' },
+	{ word: "Nik'aj q'ij", translation: 'mediodía' },
+	{ word: "B'enaq q'ij", translation: 'tarde' },
+	{ word: "B'enib'al q'ij", translation: 'atardecer' },
+	{ word: "Chaq'ab'", translation: 'noche' },
+	{ word: 'Pa taq', translation: 'a la(s)...' },
+	{ word: 'We kamik', translation: 'desde hoy: ahora' },
+	{ word: 'Ojer', translation: 'antes' },
+	{ word: 'Chirij', translation: 'después: detrás de' },
+	{ word: "Amaq'el", translation: 'siempre: frecuente' },
+	{ word: 'Maj jumul', translation: 'nunca' },
+	{ word: 'Maja', translation: 'todavía no' },
+	{ word: 'Chanim', translation: 'ahora: pronto' },
+	{ word: "Xaq k'ate'", translation: 'de repente' },
+	{ word: 'Jampa', translation: 'cuándo' }
+];

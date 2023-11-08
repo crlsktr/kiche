@@ -17,6 +17,7 @@
 		<nav class="list-nav">
 			<ul >
 				<li><a class="btn variant-soft-tertiary"href="{base}/ajilabal"><span class="flex-auto">Ajilab'al</span></a></li>
+				<li><a class="btn variant-soft-tertiary"href="{base}/memoria"><span class="flex-auto">Memoria</span></a></li>
 			</ul>
 		</nav>
 	</div>
