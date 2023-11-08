@@ -2,8 +2,10 @@
 	import { shuffleArray } from '$lib';
 	import { qijilal as dictionary, qijilal } from "$lib/dictionaries/q'ijilal-es";
 
-	let word = dictionary.map((w) => w.word);
-	let translations = dictionary.map((t) => t.translation);
+	shuffleArray(dictionary);
+	let localDictionary = dictionary.slice(0,10)
+	let word = localDictionary.map((w) => w.word);
+	let translations = localDictionary.map((t) => t.translation);
 	let solvedWords = new Set<string>();
 	let solvedTranslations = new Set<string>();
 	let combined: Translation[] = [];
@@ -22,7 +24,7 @@
 
 	const addToCheckQueue = (selected: string, type: ChoiceType) => {
 		type == ChoiceType.word ? (wordToCheck = selected) : (translationToCheck = selected);
-		let found = dictionary.find(x => x.word == wordToCheck && x.translation == translationToCheck)
+		let found = localDictionary.find(x => x.word == wordToCheck && x.translation == translationToCheck)
 		if (!!found)
 		{
 			solvedWords.add(wordToCheck);
