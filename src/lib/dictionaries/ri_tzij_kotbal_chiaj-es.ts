@@ -2,7 +2,7 @@
  * Interrogative words
  * Ri tzij k'otb'al chi'aj/ Las interrogantes
  */
-export const ri_tzij_kotbal_chyiaj = [
+export const ri_tzij_kotbal_chyiaj: Translation[] = [
 	{ word: 'Jas', translation: 'qué' },
 	{ word: 'Jas rech, jas re', translation: 'de qué' },
 	{ word: 'Jampa', translation: 'cuándo' },

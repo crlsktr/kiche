@@ -1,10 +1,17 @@
 <script lang="ts">
 	import { shuffleArray } from '$lib';
-	import { qijilal as dictionary, qijilal } from "$lib/dictionaries/q'ijilal-es";
+	import { qijilal as time_dictionary, qijilal } from "$lib/dictionaries/q'ijilal-es";
+	import { kibantajik_ri_jastaq as adjetives_dictionary} from '$lib/dictionaries/kib\'antajik_ri jastaq-es';
+	import { ri_tzij_kotbal_chyiaj as question_dictionary } from '$lib/dictionaries/ri_tzij_kotbal_chiaj-es';
 
-	shuffleArray(dictionary);
-	let localDictionary = dictionary.slice(0,10)
-	let word = localDictionary.map((w) => w.word);
+
+	const instructions: string = "Encontrá los pares de palabras que significan lo mismo";
+
+	let aggregate:Translation[] = [];
+	aggregate = aggregate.concat(...time_dictionary,...adjetives_dictionary, ...question_dictionary);
+	shuffleArray(aggregate)
+	const localDictionary = aggregate.slice(0,10)
+	let words = localDictionary.map((w) => w.word);
 	let translations = localDictionary.map((t) => t.translation);
 	let solvedWords = new Set<string>();
 	let solvedTranslations = new Set<string>();
@@ -17,9 +24,9 @@
 	}
 
 	const reset = () => {
-		shuffleArray(word);
+		shuffleArray(words);
 		shuffleArray(translations);
-		combined = word.map((x, i) => ({ word: x, translation: translations[i] }));
+		combined = words.map((x, i) => ({ word: x, translation: translations[i] }));
 	};
 
 	const addToCheckQueue = (selected: string, type: ChoiceType) => {
@@ -38,8 +45,8 @@
 
 	reset();
 </script>
-
-<div class="container mx-auto grid grid-cols-2 gap-4 overflow-auto max-h-screen">
+<h2 class="h2 text-center">{instructions}</h2>
+<div class="container py-8 mx-auto grid grid-cols-2 gap-4 overflow-auto max-h-screen">
 	{#each combined as random_word}
 		<button
 			class="btn btn-m lg:text-5xl md:text-xl sm:text-base {`variant-${wordToCheck==random_word.word ? 'ghost' : 'filled'}-${solvedWords.has(random_word.word) ? 'success': 'primary'}`}" 
@@ -51,7 +58,7 @@
 			<span>{random_word.word}</span>
 		</button>
 		<button
-			class="btn btn-m lg:text-5xl md:text-xl sm:text-base {`variant-${translationToCheck==random_word.translation ? 'ghost' : 'filled'}-${solvedTranslations.has(random_word.translation) ? 'success': 'primary'}`}"
+			class="btn btn-m lg:text-5xl md:text-xl sm:text-base {`variant-${translationToCheck==random_word.translation ? 'ghost' : 'filled'}-${solvedTranslations.has(random_word.translation) ? 'success': 'secondary'}`}"
 			on:click={() => {
 				addToCheckQueue(random_word.translation, ChoiceType.translation);
 			}}
