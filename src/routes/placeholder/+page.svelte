@@ -1,5 +1,6 @@
-<button class="btn btn-m variant-ghost-primary"></button>
-<button class="btn btn-m variant-filled-secondary"></button>
-<button class="btn btn-m variant-filled-tertiary"></button>
-<button class="btn btn-m variant-filled-success"></button>
-<button class="btn btn-m variant-filled-failure"></button>
+<button class="btn btn-m variant-ghost-primary" />
+<button class="btn btn-m variant-filled-secondary" />
+<button class="btn btn-m variant-filled-tertiary" />
+<button class="btn btn-m variant-filled-success" />
+<button class="btn btn-m variant-filled-failure" />
+<button class="btn btn-m variant-ghost-secondary" />

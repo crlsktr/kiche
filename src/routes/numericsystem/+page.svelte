@@ -1,22 +1,33 @@
-<script lang='ts'>
-	import MayanNumeral from "$lib/components/MayanNumeral.svelte";
+<script lang="ts">
+	import MayanNumeral from '$lib/components/MayanNumeral.svelte';
+	import { writable } from 'svelte/store';
 
-	let arabicNumeral: number = 1821;
+	let arabicNumeral = writable(1821);
 	let base = 20;
+	let transformedDigits: number[] = [];
 
-	let digits:number[] = [];
-	let current = arabicNumeral;
-	while(current > 0)
-	{
-		digits.unshift(current % base);
-		digits = digits;
-		current = Math.floor(current / base);
-	}
+	const getDigits = (n: number, b: number): number[] => {
+		if (n === 0) return [0];
+		let current = n;
+		let digits: number[] = [];
+		while (current > 0) {
+			digits = [current % base, ...digits];
+			current = Math.floor(current / base);
+		}
+		return digits;
+	};
+
+	arabicNumeral.subscribe((n) => (transformedDigits = getDigits(n, base)));
 </script>
+
 <div>
-	<input class="input" type="number" bind:value={arabicNumeral}>
-	<span>{arabicNumeral}</span>
-	{#each digits as digit}
-		<MayanNumeral number="{digit}" />
+	<input class="input" type="number" bind:value={$arabicNumeral} />
+	<span>{$arabicNumeral}</span>
+	{#each transformedDigits as digit, index}
+		<div>
+			<span>20<sup>{transformedDigits.length - (index + 1)} ⨯ </sup></span><MayanNumeral
+				number={digit}
+			/>
+		</div>
 	{/each}
 </div>

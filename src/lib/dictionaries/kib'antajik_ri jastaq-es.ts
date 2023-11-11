@@ -3,7 +3,7 @@
  * Profile Picture
  * Kib'antajik ri Jastaq/ Características de las cosas
  */
-export const kibantajik_ri_jastaq:Translation[] = [
+export const kibantajik_ri_jastaq: Translation[] = [
 	{ word: "Tz'apilik", translation: 'cerrado' },
 	{ word: 'Jaqalik', translation: 'abierto' },
 	{ word: "K'ak'", translation: 'nuevo' },

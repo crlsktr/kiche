@@ -1,2 +1,45 @@
-export const numerals:string[] = ["𝋠","𝋡","𝋢","𝋣","𝋤","𝋥","𝋦","𝋧","𝋨","𝋩","𝋪","𝋫","𝋬","𝋭","𝋮","𝋯","𝋰","𝋱","𝋲","𝋳"];
-export const numberNames:string[] = ["Majb’al","Jun","Keb’","Oxib’","Kajib’","Job’","Waqib’","Wuqub’","Wajxaqib’","B’elejeb’","Lajuj","Julajuj","Kab’lajuj","Oxlajuj","Kajlajuj","Jolajuj","Waqlajuj","Wuqlajuj","Wajxaqlajuj","B’elejlajuj","juwinaq"]
+export const numerals: string[] = [
+	'𝋠',
+	'𝋡',
+	'𝋢',
+	'𝋣',
+	'𝋤',
+	'𝋥',
+	'𝋦',
+	'𝋧',
+	'𝋨',
+	'𝋩',
+	'𝋪',
+	'𝋫',
+	'𝋬',
+	'𝋭',
+	'𝋮',
+	'𝋯',
+	'𝋰',
+	'𝋱',
+	'𝋲',
+	'𝋳'
+];
+export const numberNames: string[] = [
+	'Majb’al',
+	'Jun',
+	'Keb’',
+	'Oxib’',
+	'Kajib’',
+	'Job’',
+	'Waqib’',
+	'Wuqub’',
+	'Wajxaqib’',
+	'B’elejeb’',
+	'Lajuj',
+	'Julajuj',
+	'Kab’lajuj',
+	'Oxlajuj',
+	'Kajlajuj',
+	'Jolajuj',
+	'Waqlajuj',
+	'Wuqlajuj',
+	'Wajxaqlajuj',
+	'B’elejlajuj',
+	'juwinaq'
+];

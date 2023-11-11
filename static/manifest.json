@@ -1,8 +1,8 @@
 {
-  "name": "kiche",
-  "short_name": "kiche",
-    "start_url": "https://crlsktr.github.io/kiche/",
-  "lang": "es",
+	"name": "kiche",
+	"short_name": "kiche",
+	"start_url": "https://crlsktr.github.io/kiche/",
+	"lang": "es",
 	"icons": [
 		{
 			"src": "logo.png",

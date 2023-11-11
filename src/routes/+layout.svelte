@@ -18,10 +18,7 @@
 				<a href="{base}/" rel="noreferrer"><strong class="text-xl uppercase">K'iche'</strong></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-m variant-ghost-primary"
-					href="https://github.com/crlsktr/kiche"
-				>
+				<a class="btn btn-m variant-ghost-primary" href="https://github.com/crlsktr/kiche">
 					GitHub
 				</a>
 			</svelte:fragment>

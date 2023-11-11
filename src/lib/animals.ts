@@ -1,1 +1,1 @@
-export const animalOptions:string[] = ["jaguar"];
+export const animalOptions: string[] = ['jaguar'];
