@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { changeNumericBase } from '$lib';
 	import MayanNumeral from '$lib/components/MayanNumeral.svelte';
 	import { writable } from 'svelte/store';
 
@@ -6,18 +7,7 @@
 	let base = 20;
 	let transformedDigits: number[] = [];
 
-	const getDigits = (n: number, b: number): number[] => {
-		if (n === 0) return [0];
-		let current = n;
-		let digits: number[] = [];
-		while (current > 0) {
-			digits = [current % base, ...digits];
-			current = Math.floor(current / base);
-		}
-		return digits;
-	};
-
-	arabicNumeral.subscribe((n) => (transformedDigits = getDigits(n, base)));
+	arabicNumeral.subscribe((n) => (transformedDigits = changeNumericBase(n, base)));
 </script>
 
 <div>

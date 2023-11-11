@@ -1,3 +1,5 @@
+import type { Translation } from '$lib/translationInterfaces';
+
 /**
  * Adjectives
  * Profile Picture

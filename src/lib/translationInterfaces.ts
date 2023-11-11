@@ -1,4 +1,4 @@
-interface Translation {
+export interface Translation {
 	word: string;
 	translation: string;
 	language?: string;

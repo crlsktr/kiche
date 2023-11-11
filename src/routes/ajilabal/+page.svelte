@@ -7,7 +7,7 @@
 
 	let selected_animal_index: number = 0;
 	let selected_number_index: number = 0;
-	let src: string = '';
+	let animal_display: string[] = [];
 	let possible_options: string[] = [];
 	let tried_answers: Set<string> = new Set();
 	let solved: boolean = false;
@@ -24,7 +24,8 @@
 	const resetGame = () => {
 		selected_animal_index = Math.floor(Math.random() * animalOptions.length);
 		selected_number_index = Math.floor(Math.random() * numerals.length);
-		src = animalOptions[selected_animal_index] + '.png';
+		animal_display = Array(selected_number_index);
+		animal_display.fill(animalOptions[selected_animal_index]);
 		solved = false;
 		used_turn = false;
 		possible_options = [
@@ -51,9 +52,9 @@
 
 <div class="container h-full mx-auto flex-column">
 	<div class="flex flex-wrap">
-		{#each Array(selected_number_index) as img, i}
+		{#each animal_display as animal}
 			{#if animalOptions[selected_animal_index] !== ''}
-				<img class="animales" alt={animalOptions[selected_animal_index]} {src} />
+				<img class="animales" alt={animal} src={animal + '.png'} />
 			{/if}
 		{/each}
 	</div>

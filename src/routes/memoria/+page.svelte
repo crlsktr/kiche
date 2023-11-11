@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { shuffleArray } from '$lib';
-	import { qijilal as time_dictionary, qijilal } from "$lib/dictionaries/q'ijilal-es";
+	import { qijilal as time_dictionary } from "$lib/dictionaries/q'ijilal-es";
 	import { kibantajik_ri_jastaq as adjetives_dictionary } from "$lib/dictionaries/kib'antajik_ri jastaq-es";
 	import { ri_tzij_kotbal_chyiaj as question_dictionary } from '$lib/dictionaries/ri_tzij_kotbal_chiaj-es';
+	import type { Translation } from '$lib/translationInterfaces';
 
 	const instructions: string = 'Encontrá los pares de palabras que significan lo mismo';
 
@@ -33,7 +34,7 @@
 		let found = localDictionary.find(
 			(x) => x.word == wordToCheck && x.translation == translationToCheck
 		);
-		if (!!found) {
+		if (found) {
 			solvedWords = new Set<string>([...solvedWords, wordToCheck]);
 			solvedTranslations = new Set<string>([...solvedTranslations, translationToCheck]);
 			wordToCheck = '';
