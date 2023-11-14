@@ -58,7 +58,7 @@
 			{/if}
 		{/each}
 	</div>
-	<MayanNumeral number={selected_number_index} />
+	<div><MayanNumeral number={selected_number_index} /></div>
 
 	<!-- <div>{selected_number_index}</div> -->
 
