@@ -8,7 +8,7 @@
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<h2 class="h2">K'iche' etz'anem</h2>
 		<!-- Animated Logo -->
-		<figure class="fill-primary-50">
+		<figure class="fill-surface-500">
 			<section class="img-bg" />
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -22,20 +22,6 @@
 			>
 		</figure>
 		<!-- / -->
-		<nav class="list-nav">
-			<ul>
-				<li>
-					<a class="btn variant-soft-tertiary" href="{base}/ajilabal"
-						><span class="flex-auto">Ajilab'al</span></a
-					>
-				</li>
-				<li>
-					<a class="btn variant-soft-tertiary" href="{base}/memoria"
-						><span class="flex-auto">Na'tajem</span></a
-					>
-				</li>
-			</ul>
-		</nav>
 	</div>
 </div>
 
