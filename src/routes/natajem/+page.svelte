@@ -10,7 +10,7 @@
 	let aggregate: Translation[] = [];
 	aggregate = aggregate.concat(...time_dictionary, ...adjetives_dictionary, ...question_dictionary);
 	shuffleArray(aggregate);
-	const localDictionary = aggregate.slice(0, 10);
+	const localDictionary = aggregate.slice(0, 5);
 	let words = localDictionary.map((w) => w.word);
 	let translations = localDictionary.map((t) => t.translation);
 	let solvedWords = new Set<string>();
@@ -46,7 +46,7 @@
 </script>
 
 <h2 class="h2 text-center">{instructions}</h2>
-<div class="container py-8 mx-auto grid grid-cols-2 gap-4 overflow-auto max-h-screen">
+<div class="container p-6 mx-auto grid grid-cols-2 gap-4 overflow-auto max-h-screen">
 	{#each combined as random_word}
 		<button
 			class="btn btn-m lg:text-5xl md:text-xl sm:text-base {`variant-${
