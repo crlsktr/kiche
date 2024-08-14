@@ -51,6 +51,7 @@
 </script>
 
 <div class="container h-full mx-auto flex-column">
+	<h2 class="h2 text-center">¿Cuántos <strong>Balam</strong> hay aquí?</h2>
 	<div class="flex flex-wrap">
 		{#each animal_display as animal}
 			{#if animalOptions[selected_animal_index] !== ''}

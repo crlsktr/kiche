@@ -1,5 +1,4 @@
 <script>
-	import { base } from '$app/paths';
 </script>
 
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->

@@ -34,9 +34,7 @@
 				href="{base}/"
 			>
 				<div class="flex justify-center pb-1">
-					<span class="material-symbols-outlined">
-						home
-						</span>
+					<span class="material-symbols-outlined"> home </span>
 				</div>
 				<span>Home </span>
 			</AppRailAnchor>
@@ -48,9 +46,7 @@
 				href="{base}/ajilabal"
 			>
 				<div class="flex justify-center pb-1">
-					<span class="material-symbols-outlined">
-						numbers
-						</span>
+					<span class="material-symbols-outlined"> numbers </span>
 				</div>
 				<span>Ajilab'al</span>
 			</AppRailAnchor>
@@ -62,20 +58,25 @@
 				href="{base}/natajem"
 			>
 				<div class="flex justify-center pb-1">
-					<span class="material-symbols-outlined">
-						sync_alt
-					</span>
+					<span class="material-symbols-outlined"> sync_alt </span>
 				</div>
 				<span>Na'tajem</span>
 			</AppRailAnchor>
+			<AppRailAnchor
+				selected={$page.url.pathname === `${base}/numericsystem`}
+				name="tile-numericsystem"
+				value={1}
+				title="tile-numericsystem"
+				href="{base}/numericsystem"
+			>
+				<div class="flex justify-center pb-1">
+					<span class="material-symbols-outlined"> pin </span>
+				</div>
+				<span>Ajilab'al 2</span>
+			</AppRailAnchor>
 			<!-- --- -->
 			<svelte:fragment slot="trail">
-				
-				<AppRailAnchor
-					href="https://github.com/crlsktr/kiche"
-					target="_blank"
-					title="Account"
-				>
+				<AppRailAnchor href="https://github.com/crlsktr/kiche" target="_blank" title="Account">
 					<div class="flex justify-center pb-1">
 						<svg
 							role="img"
