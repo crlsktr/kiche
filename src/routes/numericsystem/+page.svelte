@@ -3,7 +3,7 @@
 	import MayanNumeral from '$lib/components/MayanNumeral.svelte';
 	import { writable } from 'svelte/store';
 
-	let arabicNumeral = writable(1821);
+	let arabicNumeral = writable(2022);
 	let base = 20;
 	let transformedDigits: number[] = [];
 
@@ -11,13 +11,19 @@
 </script>
 
 <div>
-	<input class="input" type="number" bind:value={$arabicNumeral} />
-	<span>{$arabicNumeral}</span>
-	{#each transformedDigits as digit, index}
+	<div>
+		<input class="input text-center inline" type="number" bind:value={$arabicNumeral} />
+	</div>
+
+	<div class="flex flex-row justify-center">
 		<div>
-			<span>20<sup>{transformedDigits.length - (index + 1)} ⨯ </sup></span><MayanNumeral
-				number={digit}
-			/>
+			{#each transformedDigits as digit, index}
+				<div>
+					<span>20<sup>{transformedDigits.length - (index + 1)}</sup>⨯</span><MayanNumeral
+						number={digit}
+					/> = {20 ** (transformedDigits.length - index - 1) * digit}
+				</div>
+			{/each}
 		</div>
-	{/each}
+	</div>
 </div>
